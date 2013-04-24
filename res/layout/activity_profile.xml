@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Home" >
+    
+   	<TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addClassList"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="Add a class"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+   	
+   	<Spinner
+        android:id="@+id/addClassList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addClassBtn"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="33dp" />
+   	
+    <Button
+        android:id="@+id/addClassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addClassList"
+        android:layout_centerHorizontal="false"
+        android:text="@string/addClassBtn" />
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addClassBtn"
+        android:text="Remove a class"
+        android:layout_below="@+id/addClassBtn"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <Spinner
+        android:id="@+id/delClassList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+         />
+        
+    <Button
+        android:id="@+id/delClassBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="false"
+        android:layout_below="@+id/delClassList"
+        android:text="@string/delClassBtn" />
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addClassBtn"
+        android:text="Delete your current location"
+        android:layout_below="@+id/delClassBtn"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+	<Button
+        android:id="@+id/delCurrLocBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="false"
+        android:layout_below="@+id/textView3"
+        android:text="@string/delCurrLocBtn" />
+	
+	
+    
+</RelativeLayout>

@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,14 +23,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Home extends Activity {
+public class Home extends MenuActivity {
 
 	private Spinner classSpinner;
 	private Spinner locationSpinner;
 	private JSONParser jsonParser;
 	Button currLocBtn;
 	String netid;
-	JSONObject userData;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +105,9 @@ public class Home extends Activity {
         locationSpinner.setAdapter(dataAdapter2);
         
         currLocBtn = (Button) findViewById(R.id.currLocBtn);
-    	
 		currLocBtn.setOnClickListener(new View.OnClickListener() {
-			
             @Override
             public void onClick(View view) {
-                
-            	
         		String location = locationSpinner.getSelectedItem().toString();
         		String course = classSpinner.getSelectedItem().toString();
         		EditText timeText = (EditText) findViewById(R.id.time);
@@ -133,19 +131,14 @@ public class Home extends Activity {
                 
                 JSONObject json = jsonParser.getJSONFromUrl("http://studygroup.web.engr.illinois.edu/android/setCurrentLocation.php", nameValuePairs);
 
-                Toast.makeText(Home.this, "Location Set", Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(Home.this, "Location Set", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.TOP, 0, 120);
+                toast.show();
  
             }
         });
 		
 		
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.home, menu);
-		return true;
 	}
 
 }

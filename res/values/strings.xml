@@ -13,5 +13,12 @@
     <string name="time">Time</string>
     <string name="description">Description</string>
     <string name="currLocBtn">Set Location</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="addClassBtn">Add</string>
+    <string name="delClassBtn">Delete</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="delCurrLocBtn">Delete</string>
+    <string name="title_activity_list_view_adapter">ListViewAdapter</string>
 
 </resources>

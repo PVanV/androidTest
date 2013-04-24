@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,12 +61,14 @@ public class MainActivity extends Activity {
 		        		startActivity(i);
 					}
 					else{
-						Toast.makeText(MainActivity.this,
-								"Incorrect netid or password",
-									Toast.LENGTH_SHORT).show();
+						Toast toast = Toast.makeText(MainActivity.this, "Invalid netid or password", Toast.LENGTH_SHORT);
+		                toast.setGravity(Gravity.TOP, 0, 120);
+		                toast.show();
 					}
 				} catch (JSONException e) {
-					e.printStackTrace();
+					Toast toast = Toast.makeText(MainActivity.this, "Invalid netid or password", Toast.LENGTH_SHORT);
+	                toast.setGravity(Gravity.TOP, 0, 120);
+	                toast.show();
 				}
             	
                 
@@ -82,11 +85,11 @@ public class MainActivity extends Activity {
 	}
 
 	
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
-	}
+	}*/
 
 }
